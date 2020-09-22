@@ -19,10 +19,10 @@ songplay_table_create = ("""
     CREATE TABLE IF NOT EXISTS songplays
     (songplay_id SERIAL PRIMARY KEY,
     start_time bigint,
-    user_id int,
+    user_id int NOT NULL,
     level varchar,
-    song_id varchar,
-    artist_id varchar,
+    song_id varchar NOT NULL,
+    artist_id varchar NOT NULL,
     session_id int,
     location varchar(200),
     useragent varchar(200)
@@ -46,7 +46,7 @@ song_table_create = ("""
     (
     song_id varchar PRIMARY KEY,
     title varchar(200),
-    artist_id varchar,
+    artist_id varchar NOT NULL,
     year int,
     duration real
     );
