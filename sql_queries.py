@@ -94,7 +94,7 @@ user_table_insert = ("""
         INSERT INTO users
         (user_id, first_name, last_name, gender, level)
         VALUES( %(userId)s, %(firstName)s, %(lastName)s, %(gender)s, %(level)s )
-        ON CONFLICT (user_id) DO NOTHING;
+        ON CONFLICT (user_id) DO UPDATE SET level = %(userId)s;
 """)
 
 song_table_insert = ("""
@@ -127,7 +127,7 @@ song_select = ("""
     ON songs.artist_id = artists.artist_id
     AND songs.title = %s
     AND artists.name = %s
-    AND abs(songs.duration - %s) >=0
+    AND abs(songs.duration - %s) <= 0.1
 ;    
 """)
 
