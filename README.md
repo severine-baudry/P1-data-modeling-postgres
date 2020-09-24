@@ -107,11 +107,11 @@ Output :
 # v1.0
 First version submitted to Udacity platform.
 
-# v1.2
+# v1.1
 Second version submitted to Udacity platform.
 ### Changed
 - use UPSERT to update users table, when the level (free/paid) of one user changes along time.
-- use foreign keys in songs and songplays, update table filling accordingly.
-- (user_id, song_id, time_id) as the composite primary key of table songplays, to avoid multiple insertions.
+- use foreign keys in songs and songplays, update table insertion order accordingly.
+- `(user_id, song_id, time_id)` as the composite primary key of table songplays, to avoid multiple insertions.
 ### Added 
-- scripts query_songs.sh, query_artists.sh, query_users.sh and query_songplays.sh to query tables content.
+- scripts `query_songs.sh`, `query_artists.sh`, `query_users.sh` and `query_songplays.sh` to query tables content.
